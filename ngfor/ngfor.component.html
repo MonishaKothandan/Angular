@@ -1,0 +1,46 @@
+<div>
+  <h1>Sytructural Directive</h1>
+  <ul *ngFor="let nested of nestedArray">
+    <li>
+      {{ nested.type }}
+    </li>
+      <ul *ngFor="let data of nested.courses">
+        <li>
+        {{
+          data.cname
+        }} </li>
+      </ul>
+    
+  </ul>
+
+  <ul>
+    <li
+      *ngFor="
+        let data of myData;
+        index as i;
+        let even = even;
+        let odd = odd;
+        let first = first;
+        let last = last
+      "
+      [ngClass]="{ first: first, second: last }"
+    >
+      {{ i }} {{ even }}
+      {{ data.name }}
+      {{ data.age }}
+    </li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr *ngFor="let data of myData">
+      <td>{{ data.id }}</td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+<ul>
+    <li *ngFor="let data of employee">
+        {{data.type}}
+        <div [ngSwitch] = "data.type"> 
+            <div class= "fbox" *ngSwitchCase ="'frontend'">
+                {{ data.name }}
+            </div>
+            <div class="bbox" *ngSwitchCase ="'backend'">
+                {{ data.name }}
+            </div>   
+             <div class="" *ngSwitchDefault>
+                {{data.name}}
+            </div>
+        </div>
+    </li>
+</ul>
+

@@ -1,0 +1,11 @@
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
+
+<div *ngIf="isLoggedin; then Login; else Logout"></div>
+<ng-template #Login>
+    Welcome
+</ng-template>   
+<ng-template #Logout>
+  please login
+</ng-template>
+
